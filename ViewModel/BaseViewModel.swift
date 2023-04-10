@@ -17,9 +17,9 @@ class BaseViewModel: ObservableObject {
 }
 
 enum Tab: String {
-    case Home = "home"
-    case Nutrition = "nutrition"
-    case Calculator = "calculator"
+    case Home = "mug"
+    case Nutrition = "list.bullet.rectangle.portrait"
+    case Calculator = "number.square"
     case Person = "person"
 }
 

@@ -19,8 +19,7 @@ struct NutritionView: View {
                     .bold()
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .font(.system(size: 40))
-                    .padding(.top, 40)
-                    .padding(.bottom, 60)
+                    .padding(.vertical, 60)
                 Image("NutritionFacts")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -33,6 +32,7 @@ struct NutritionView: View {
                 }
                 Spacer()
             }.padding(.horizontal, 64)
+                .padding(.top, 64)
         }
     }
 
