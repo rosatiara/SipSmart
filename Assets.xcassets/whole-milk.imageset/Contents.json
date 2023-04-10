@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "whole-milk.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
