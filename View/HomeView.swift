@@ -46,6 +46,7 @@ struct HomeView: View {
             }.padding(.horizontal, 64)
                 .padding(.top, 40)
         }
+        .overlay(DetailView(animation:animation).environmentObject(baseData))
     }
     @ViewBuilder func CardView(drink: Drink) -> some View {
         VStack() {

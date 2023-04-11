@@ -20,20 +20,12 @@ struct BaseView: View {
                 HomeView()
                     .environmentObject(baseData)
                     .tag(Tab.Home)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 Text("Nutrition")
                     NutritionView()
                     .tag(Tab.Nutrition)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 Text("Calculator")
                     .tag(Tab.Calculator)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                Text("Person")
-//                    .tag(Tab.Person)
-//                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                    .foregroundColor(Color("orange"))
-//                    .background(Color.black)
-//                
+               
             }
             .overlay(
                 HStack(spacing: 0) {
@@ -41,7 +33,7 @@ struct BaseView: View {
                     TabButton(Tab: .Nutrition)
                     TabButton(Tab: .Calculator)
                 }.background(Color("myBlue"))
-                    .offset(y: baseData.showDetail ? 200 : 0)
+                    .offset(y: baseData.showDetail ? 0 : 0)
                 ,alignment: .bottom
             )
     }
@@ -61,7 +53,8 @@ struct BaseView: View {
                 .frame(width: 25, height: 40)
                 .frame(maxWidth: .infinity)
                 .foregroundColor(Color("myOrange"))
-                .padding(.top, 20)
+                .padding(.top, 30)
+                .border(.red)
         }
     }
 }
