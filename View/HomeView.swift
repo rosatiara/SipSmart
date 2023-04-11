@@ -57,7 +57,7 @@ struct HomeView: View {
                     ZStack {
                         Circle()
                             .fill(drink.drinkBG)
-                            .frame(width: 150)
+                            .frame(width: 130)
                             .padding(-10)
                         Circle()
                             .stroke(Color.white, lineWidth: 1.4)
