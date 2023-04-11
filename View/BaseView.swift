@@ -40,7 +40,7 @@ struct BaseView: View {
                     TabButton(Tab: .Home)
                     TabButton(Tab: .Nutrition)
                     TabButton(Tab: .Calculator)
-                }.background(Color.black)
+                }.background(Color("myBlue"))
                     .offset(y: baseData.showDetail ? 200 : 0)
                 ,alignment: .bottom
             )
@@ -58,10 +58,10 @@ struct BaseView: View {
                 .resizable()
                 .renderingMode(.template)
                 .aspectRatio(contentMode: .fit)
-                .background(Color("gray").opacity(0.45))
-                .frame(width: 25, height: 80)
+                .frame(width: 25, height: 40)
                 .frame(maxWidth: .infinity)
-                .foregroundColor(.white)
+                .foregroundColor(Color("myOrange"))
+                .padding(.top, 20)
         }
     }
 }
