@@ -56,7 +56,7 @@ struct DetailView: View {
                     }.foregroundColor(Color("myBlue")).multilineTextAlignment(.center).padding(.bottom, 90)
                     ZStack { // Bottom Card
                         RoundedRectangle(cornerRadius: 30)
-                            .frame(width: 760, height: 350)
+                            .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.height * 0.25)
                             .foregroundColor(.white)
                         VStack {
                             HStack {
@@ -94,9 +94,9 @@ struct DetailView: View {
                                 .padding(.horizontal, 64)
                                 .offset(y: -70)
                                 .foregroundColor(Color("myBlue"))
+                                .frame(maxWidth: 750)
                         }
-                        
-                    }
+                    }.offset(y: -10)
                 }
             }
         }

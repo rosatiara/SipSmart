@@ -16,19 +16,22 @@ struct NutritionView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 Text("Reading Nutrition Facts \n_The Right Way_")
-                    .bold()
+                    .fontWeight(.bold)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .font(.system(size: 40))
-                    .padding(.vertical, 60)
+                    .foregroundColor(Color("myBlue"))
+                    .padding(.top, 20)
                 Image("NutritionFacts")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 ZStack {
                     RoundedRectangle(cornerRadius: 15)
-                        .frame(width: 726, height: 100)
+                        .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.08)
                         .foregroundColor(Color.white.opacity(0.4))
                     Text("Hey, just a quick heads up - the serving size of different products may vary, so keep that in mind when checking out the label. And don't let those \"low calorie\" drinks fool you - some of them can still have a ton of sugar! So be careful and don't fall for their tricks! 😜 ")
                         .padding()
+                        .foregroundColor(Color("myBlue"))
+
                 }
                 Spacer()
             }.padding(.horizontal, 64)

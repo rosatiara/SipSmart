@@ -21,14 +21,16 @@ struct HomeView: View {
             VStack {
                 VStack {
                     Text("Hello, sipmate! 👋")
-                        .bold()
-                        .font(.system(size: 40))
+                        .fontWeight(.heavy)
+                        .font(.system(size: 48))
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.bottom, 0.5)
                     Text("Ready to take control of your sugary drinks intake and improve your health?")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.system(size: 22))
-                }
-                //<---- Search bar -->
+                        .padding(.bottom, 20)
+
+                }.padding(.top, 40).foregroundColor(Color("myBlue"))
                 ScrollView(.vertical, showsIndicators: false) {
                     let columns = Array(repeating: GridItem(.flexible(), spacing: 20), count: 3)
                     LazyVGrid(columns: columns) {
@@ -53,12 +55,12 @@ struct HomeView: View {
             Image(drink.drinkImage)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 80)
+                .frame(width: UIScreen.main.bounds.width * 0.1)
                 .background(
                     ZStack {
                         Circle()
                             .fill(drink.drinkBG)
-                            .frame(width: 130)
+                            .frame(width: UIScreen.main.bounds.width * 0.15)
                             .padding(-10)
                         Circle()
                             .stroke(Color.white, lineWidth: 1.4)
@@ -66,9 +68,13 @@ struct HomeView: View {
                     }
                 )
             Text(drink.drinkName)
+                .bold()
+                .font(.system(size: 22))
                 .padding(.top, 20)
         }
-        .frame(width: 220, height: 280)
+        
+        //.frame(width: 220, height: 280)
+        .frame(width: UIScreen.main.bounds.width * 0.27, height: UIScreen.main.bounds.height * 0.26)
         .background(Color.white, in: RoundedRectangle(cornerRadius: 25))
         .padding(.top, 15)
     }
@@ -78,5 +84,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(BaseViewModel())
     }
 }
