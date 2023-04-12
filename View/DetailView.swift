@@ -35,7 +35,7 @@ struct DetailView: View {
                                 .padding(.leading, 54)
                         }
                         Spacer()
-                        Text("Total Sugar per Package")
+                        Text("Total Added Sugar per Package")
                             .font(.system(size: 34))
                             .fontWeight(.semibold)
                         Spacer()
@@ -74,27 +74,26 @@ struct DetailView: View {
                                     RoundedRectangle(cornerRadius: 20)
                                         .fill(Color("myBlue"))
                                         .frame(width:180, height: 90)
-                                    Text("\(drink.teaspoon) teaspoons")
+                                    Text("\(drink.teaspoon) \nteaspoons")
                                         .foregroundColor(Color("myOrange"))
                                         .bold()
                                         .font(.system(size: 22))
+                                        .multilineTextAlignment(.center)
                                 }
                                 
                             }.offset(y: -110)
-                            Text(drink.quote)
-                                .italic()
-                                .fontWeight(.regular)
-                                .font(.system(size: 30))
-                                .multilineTextAlignment(.center)
-                                .padding(.horizontal, 64)
-                                .offset(y: -80)
-                                .foregroundColor(Color("myBlue"))
-                            Text(drink.quoteAuthor)
+                            Text("Healthier Alternatives")
                                 .fontWeight(.bold)
                                 .font(.system(size: 30))
-                                .offset(y: -50)
+                                .offset(y: -90)
                                 .foregroundColor(Color("myBlue"))
-
+                            Text(drink.alternatives)
+                                .fontWeight(.regular)
+                                .font(.system(size: 26))
+                                .multilineTextAlignment(.center)
+                                .padding(.horizontal, 64)
+                                .offset(y: -70)
+                                .foregroundColor(Color("myBlue"))
                         }
                         
                     }

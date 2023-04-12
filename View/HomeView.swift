@@ -65,9 +65,8 @@ struct HomeView: View {
                             .padding(-3)
                     }
                 )
-            VStack {
-                Text(drink.drinkName)
-            }
+            Text(drink.drinkName)
+                .padding(.top, 20)
         }
         .frame(width: 220, height: 280)
         .background(Color.white, in: RoundedRectangle(cornerRadius: 25))
