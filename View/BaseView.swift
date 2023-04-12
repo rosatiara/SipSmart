@@ -53,8 +53,7 @@ struct BaseView: View {
                 .frame(width: 25, height: 40)
                 .frame(maxWidth: .infinity)
                 .foregroundColor(Color("myOrange"))
-                .padding(.top, 30)
-                .border(.red)
+                .padding(.top, 20)
         }
     }
 }

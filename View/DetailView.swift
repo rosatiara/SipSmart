@@ -60,13 +60,26 @@ struct DetailView: View {
                             .foregroundColor(.white)
                         VStack {
                             HStack {
-                                RoundedRectangle(cornerRadius: 20)
-                                    .fill(Color("myOrange"))
-                                    .frame(width:180, height: 90)
-                                    .padding(.trailing, 10)
-                                RoundedRectangle(cornerRadius: 20)
-                                    .fill(Color("myBlue"))
-                                    .frame(width:180, height: 90)
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .fill(Color("myOrange"))
+                                        .frame(width:180, height: 90)
+                                        .padding(.trailing, 10)
+                                    Text("\(drink.totalSugar)")
+                                        .foregroundColor(Color("myBlue"))
+                                        .bold()
+                                        .font(.system(size: 22))
+                                }
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .fill(Color("myBlue"))
+                                        .frame(width:180, height: 90)
+                                    Text("\(drink.teaspoon) teaspoons")
+                                        .foregroundColor(Color("myOrange"))
+                                        .bold()
+                                        .font(.system(size: 22))
+                                }
+                                
                             }.offset(y: -110)
                             Text(drink.quote)
                                 .italic()
@@ -75,10 +88,12 @@ struct DetailView: View {
                                 .multilineTextAlignment(.center)
                                 .padding(.horizontal, 64)
                                 .offset(y: -80)
+                                .foregroundColor(Color("myBlue"))
                             Text(drink.quoteAuthor)
                                 .fontWeight(.bold)
                                 .font(.system(size: 30))
                                 .offset(y: -50)
+                                .foregroundColor(Color("myBlue"))
 
                         }
                         
