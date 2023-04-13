@@ -25,6 +25,8 @@ struct BaseView: View {
                     .tag(Tab.Nutrition)
                 Text("Calculator")
                     .tag(Tab.Calculator)
+                Text("Learn")
+                    .tag(Tab.Learn)
                
             }
             .overlay(
@@ -32,6 +34,7 @@ struct BaseView: View {
                     TabButton(Tab: .Home)
                     TabButton(Tab: .Nutrition)
                     TabButton(Tab: .Calculator)
+                    TabButton(Tab: .Learn)
                 }.background(Color("myBlue"))
                     .offset(y: baseData.showDetail ? 0 : 0)
                 ,alignment: .bottom

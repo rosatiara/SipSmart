@@ -20,6 +20,7 @@ enum Tab: String {
     case Home = "Drinks"
     case Nutrition = "Nutrition Facts"
     case Calculator = "Calculator"
+    case Learn = "Learn"
     case Person = "person"
 }
 
