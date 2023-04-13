@@ -24,8 +24,10 @@ struct BaseView: View {
                     NutritionView()
                     .tag(Tab.Nutrition)
                 Text("Calculator")
+                    CalculatorViewPage()
                     .tag(Tab.Calculator)
                 Text("Learn")
+                    LearnView()
                     .tag(Tab.Learn)
                
             }
