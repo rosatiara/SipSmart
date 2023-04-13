@@ -40,21 +40,26 @@ struct BaseView: View {
     
     @ViewBuilder
     func TabButton(Tab: Tab)-> some View {
-        Button {
-            withAnimation {
-                baseData.currentTab = Tab
+        VStack {
+            Button {
+                withAnimation {
+                    baseData.currentTab = Tab
+                }
+                
+            } label: {
+                Image(Tab.rawValue)
+                    .resizable()
+                    .renderingMode(.template)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 25, height: 40)
+                    .frame(maxWidth: .infinity)
+                    .foregroundColor(Color("myOrange"))
+                    .padding(.top, 20)
             }
-            
-        } label: {
-            Image(Tab.rawValue)
-                .resizable()
-                .renderingMode(.template)
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 25, height: 40)
-                .frame(maxWidth: .infinity)
+            Text(Tab.rawValue)
                 .foregroundColor(Color("myOrange"))
-                .padding(.top, 20)
         }
+        
     }
 }
 

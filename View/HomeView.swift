@@ -20,17 +20,17 @@ struct HomeView: View {
                 .scaledToFill()
             VStack {
                 VStack {
-                    Text("Hello, sipmate! 👋")
-                        .fontWeight(.heavy)
-                        .font(.system(size: 48))
+                    Text("Hello, SipMate! 👋")
+                        .fontWeight(.bold)
+                        .font(.system(size: UIScreen.main.bounds.width * 0.06))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.bottom, 0.5)
                     Text("Ready to take control of your sugary drinks intake and improve your health?")
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .font(.system(size: 22))
+                        .font(.system(size: UIScreen.main.bounds.width * 0.025))
                         .padding(.bottom, 20)
 
-                }.padding(.top, 40).foregroundColor(Color("myBlue"))
+                }.padding(.top, UIScreen.main.bounds.height * 0.001).foregroundColor(Color("myBlue"))
                 ScrollView(.vertical, showsIndicators: false) {
                     let columns = Array(repeating: GridItem(.flexible(), spacing: 20), count: 3)
                     LazyVGrid(columns: columns) {
@@ -45,8 +45,8 @@ struct HomeView: View {
                         }
                     }
                 }
-            }.padding(.horizontal, 64)
-                .padding(.top, 40)
+            }.padding(.horizontal, UIScreen.main.bounds.width * 0.07)
+                .padding(.top, UIScreen.main.bounds.width * 0.07)
         }
         .overlay(DetailView(animation:animation).environmentObject(baseData))
     }
@@ -60,7 +60,7 @@ struct HomeView: View {
                     ZStack {
                         Circle()
                             .fill(drink.drinkBG)
-                            .frame(width: UIScreen.main.bounds.width * 0.15)
+                            .frame(width: UIScreen.main.bounds.width * 0.16)
                             .padding(-10)
                         Circle()
                             .stroke(Color.white, lineWidth: 1.4)
@@ -69,8 +69,9 @@ struct HomeView: View {
                 )
             Text(drink.drinkName)
                 .bold()
-                .font(.system(size: 22))
+                .font(.system(size: UIScreen.main.bounds.width * 0.024))
                 .padding(.top, 20)
+                .foregroundColor(Color("myBlue"))
         }
         
         //.frame(width: 220, height: 280)
