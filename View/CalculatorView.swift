@@ -73,8 +73,8 @@ struct CalculatorView: View {
                 .padding(.top, 16)
                 VStack {
                     Text("Total sugars per package")
-                        .font(.body)
-                        .foregroundColor(.gray)
+                        .font(.system(size: 24))
+                        .foregroundColor(Color("myBlue"))
                         Text("\(calculateTotalSugar(), specifier: "%.0f")")
                             .font(.largeTitle)
                             .bold()
@@ -96,20 +96,33 @@ struct CalculatorView: View {
         return totalServingSlider * addedSugarSlider
     }
     
+    func calculateTotalTeaspoons() -> (Double, Double) {
+        var totalTsp: Double
+        var totalAddedTsp: Double
+        totalTsp = calculateTotalSugar() * 0.23999
+        totalAddedTsp = calculateAddedSugar() * 0.23999
+        return (totalTsp, totalAddedTsp)
+    }
+    
     func calculateSugar() -> String {
         let totalSugar = Int(calculateTotalSugar())
         let addedSugar = Int(calculateAddedSugar())
+        let totalTeaspoons = calculateTotalTeaspoons()
         switch calculateAddedSugar() {
         case 0..<18.5:
             return "If you enjoy the entire package, you'll be treating yourself to \(totalSugar)g of sugars, \(addedSugar)g of which are added sugars."
         case 18.6..<24.9:
-            return "If you enjoy the entire package, you'll be treating yourself to \(totalSugar)g of sugars, \(addedSugar)g of which are added sugars."
+            return "If you enjoy the entire package, you'll be treating yourself to  \(totalSugar)g of sugars, \(addedSugar)g of which are added sugars."
         default:
-            return "If you enjoy the entire package, you'll be treating yourself to \(totalSugar)g of sugars, \(addedSugar)g of which are added sugars.\nThat has surpassed the WHO's recommendation of daily sugar intake."
+            return "If you enjoy the entire package, you'll be treating yourself to \(totalSugar)g of sugars, \(addedSugar)g of which are added sugars.\nThat has surpassed the WHO's recommendation of daily sugar intake. \n\nThat is equal to \(totalTeaspoons.0) teaspoons of sugar."
         }
     }
 }
 
+/*
+ TODO:
+ TAMBAHIN TEASPOONS OF SUGAR BUAT ADDED SUGAR
+ */
 
 struct CalculatorView_Previews: PreviewProvider {
     static var previews: some View {
