@@ -121,7 +121,8 @@ struct CalculatorView: View {
 
 /*
  TODO:
- TAMBAHIN TEASPOONS OF SUGAR BUAT ADDED SUGAR
+ - TAMBAHIN TEASPOONS OF SUGAR BUAT ADDED SUGAR
+ - coba solution #2 https://stackoverflow.com/questions/27531195/return-multiple-values-from-a-function-in-swift
  */
 
 struct CalculatorView_Previews: PreviewProvider {

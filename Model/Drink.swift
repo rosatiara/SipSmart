@@ -109,11 +109,3 @@ let drinks = [
           drinkBG: Color("bg3")),
 ]
 
-/**
- ― Herophilus
- 
- 
- 
- 
- 
- **/

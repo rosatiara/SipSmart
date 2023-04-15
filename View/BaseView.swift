@@ -43,8 +43,7 @@ struct BaseView: View {
             )
     }
     
-    @ViewBuilder
-    func TabButton(Tab: Tab)-> some View {
+    @ViewBuilder func TabButton(Tab: Tab)-> some View {
         VStack {
             Button {
                 withAnimation {
