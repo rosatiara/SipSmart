@@ -3,7 +3,7 @@ import Foundation
 
 struct LearnView: View {
     @State private var showFactView = false
-    @State private var selectedMyth: Myth? = nil
+    @State private var selectedMyth: Fact? = nil
     
     var body: some View {
         ZStack {
@@ -13,27 +13,29 @@ struct LearnView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 VStack {
-                    Text("Debunking Sugar Myths")
+                    Text("Sip into Sweetness: Discover Sugar's Secrets")
                         .fontWeight(.heavy)
-                        .font(.system(size: 50))
+                        .font(.system(size: 38))
+                        .multilineTextAlignment(.center)
                         .padding(.bottom, 20)
-                    Text("The World Health Organization (WHO) recommends limiting free sugars (sugars added to foods and beverages) to **less than 10% of total energy intake for adults**. They also encourage further reduction to below 5% for additional health benefits, equivalent to roughly 25 grams or 6 teaspoons of sugar per day for adults. \n\n SipCalc will help you to keep tabs on how much added sugar you're sipping. 💪")
+                    Text("Get ready to satisfy your curiosity and learn interesting tidbits about this sweet substance. From its various forms and hidden sources to its impact on mood, oral health, and more, discover fascinating facts that will deepen your understanding of sugar. Let's dive into the sweet world of sugar and uncover some intriguing facts that might surprise you!")
                         .multilineTextAlignment(.center)
                 }
                 .foregroundColor(Color("myBlue"))
                 .padding(.top, UIScreen.main.bounds.height * 0.05)
                 .padding(.bottom, 40)
-                
-                let columns = Array(repeating: GridItem(.flexible(), spacing: 20), count: 3)
-                LazyVGrid(columns: columns) {
-                    ForEach(myths) { myth in
-                        CardView(myth: myth)
-                            .onTapGesture {
-                                withAnimation {
-                                    selectedMyth = myth
-                                    showFactView = true
+                ScrollView(.vertical, showsIndicators: false) {
+                    let columns = Array(repeating: GridItem(.flexible()), count: 3)
+                    LazyVGrid(columns: columns) {
+                        ForEach(myths) { myth in
+                            CardView(myth: myth)
+                                .onTapGesture {
+                                    withAnimation {
+                                        selectedMyth = myth
+                                        showFactView = true
+                                    }
                                 }
-                            }
+                        }
                     }
                 }
                 Spacer()
@@ -46,24 +48,24 @@ struct LearnView: View {
             }
         }
     }
-    @ViewBuilder func CardView(myth: Myth) -> some View {
+    @ViewBuilder func CardView(myth: Fact) -> some View {
         ZStack() {
             Circle()
-                .stroke(myth.mythTheme)
-            Text(myth.mythDesc)
+                .stroke(myth.factTheme)
+            Text(myth.factTitle)
                 .bold()
-                .foregroundColor(myth.mythTheme)
+                .foregroundColor(myth.factTheme)
                 .frame(maxWidth: 150)
                 .multilineTextAlignment(.center)
-            Image(myth.mythImage)
+            Image(myth.factImage)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: UIScreen.main.bounds.width * 0.15)
-                .offset(x:-80,  y: 100)
+                .frame(width: UIScreen.main.bounds.width * 0.12)
+                .offset(x:-70,  y: 90)
         }
         
         //.frame(width: 220, height: 280)
-        .frame(width: UIScreen.main.bounds.width * 0.3, height: UIScreen.main.bounds.height * 0.2)
+        .frame(width: UIScreen.main.bounds.width * 0.25, height: UIScreen.main.bounds.height * 0.2)
         .background(Color.white, in: Circle())
         .padding(.bottom, 40)
     }
@@ -71,7 +73,7 @@ struct LearnView: View {
 }
 
 struct FactView: View {
-    let myth: Myth
+    let myth: Fact
     @Binding var showFactView: Bool
     
     var body: some View {
@@ -88,24 +90,21 @@ struct FactView: View {
                     }
                 }, label: {
                     Image(systemName: "xmark.circle.fill")
-                        .foregroundColor(.gray)
                         .font(.title)
-                        .padding(.top, 8)
-                        .padding(.trailing, 8)
+                        .padding(.top, 40)
+                        .padding(.trailing, 40)
                 })
                 
                 .frame(maxWidth: .infinity, alignment: .trailing)
-                .padding(.trailing, 30)
-                .padding(.bottom, 30)
-                Text(myth.mythDesc)
+                Text(myth.explanation)
+                    .font(.system(size: 20))
                     .bold()
-                    .foregroundColor(myth.mythTheme)
-                    .frame(maxWidth: UIScreen.main.bounds.width * 0.8)
+                    .foregroundColor(myth.factTheme)
+                    .frame(maxWidth: UIScreen.main.bounds.width * 0.7)
                     .multilineTextAlignment(.center)
-                    .padding(.bottom, UIScreen.main.bounds.height * 0.08)
-                
-                    .border(.red)
-                
+                    .padding(.bottom, UIScreen.main.bounds.height * 0.05)
+                    .padding(.top, UIScreen.main.bounds.height * 0.005)
+                                
             }
         }
         .frame(width: UIScreen.main.bounds.width * 0.85)
@@ -113,6 +112,7 @@ struct FactView: View {
         .cornerRadius(20)
         .shadow(radius: 5)
         .padding(.top, UIScreen.main.bounds.height * 0.1)
+        .foregroundColor(myth.factTheme)
     }
 }
 
