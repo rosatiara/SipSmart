@@ -24,6 +24,7 @@ struct CalculatorViewPage: View {
                         .fontWeight(.heavy)
                         .font(.system(size: 50))
                         .padding(.bottom, 20)
+                        .padding(.top, UIScreen.main.bounds.height * 0.025)
                     Text("The World Health Organization (WHO) recommends limiting free sugars (sugars added to foods and beverages) to **less than 10% of total energy intake for adults**. They also encourage further reduction to below 5% for additional health benefits, equivalent to roughly 25 grams or 6 teaspoons of sugar per day for adults. \n\n SipCalc will help you to keep tabs on how much added sugar you're sipping. 💪")
                         .multilineTextAlignment(.center)
                 }.foregroundColor(Color("myBlue")).padding(.top, UIScreen.main.bounds.height * 0.05).padding(.bottom, 40)

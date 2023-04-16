@@ -25,7 +25,7 @@ struct LearnView: View {
                         .font(.system(size: 38))
                         .multilineTextAlignment(.center)
                         .padding(.bottom, 20)
-                    Text("From its various forms and hidden sources to its impact on mood, oral health, and more, discover fascinating facts that will deepen your understanding of sugar. Let's dive into the sweet world of sugar and uncover some intriguing facts that might surprise you!")
+                    Text("From its various forms and hidden sources to its impact on mood, oral health, and more, discover fascinating facts that will deepen your understanding of sugar. These **cute sugar cubes** will help you to  dive into the sweet world of sugar and uncover some intriguing facts about it!")
                         .multilineTextAlignment(.center)
                 }
                 .foregroundColor(Color("myBlue"))
@@ -54,6 +54,7 @@ struct LearnView: View {
                 FactView(fact: selectedFact!, showFactView: $showFactView)
             }
         }
+        .padding(.top, UIScreen.main.bounds.height * 0.1)
     }
     @ViewBuilder func CardView(myth: Fact) -> some View {
         ZStack() {

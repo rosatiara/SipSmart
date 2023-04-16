@@ -25,6 +25,8 @@ struct HomeView: View {
                         .font(.system(size: UIScreen.main.bounds.width * 0.06))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.bottom, 0.5)
+                        .padding(.top, UIScreen.main.bounds.height * 0.01)
+
                     Text("Ready to take control of your sugary drinks intake and improve your health?")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.system(size: UIScreen.main.bounds.width * 0.025))

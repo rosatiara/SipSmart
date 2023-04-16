@@ -20,7 +20,8 @@ struct NutritionView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .font(.system(size: 40))
                     .foregroundColor(Color("myBlue"))
-                    .padding(.top, 20)
+                    .padding(.top, UIScreen.main.bounds.height * 0.05)
+
                 Image("NutritionFacts")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -36,7 +37,6 @@ struct NutritionView: View {
                 }.padding(.top, 30)
                 Spacer()
             }.padding(.horizontal, 64)
-                .padding(.top, UIScreen.main.bounds.width * 0.03)
         }
     }
 
