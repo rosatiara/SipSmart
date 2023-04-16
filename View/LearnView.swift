@@ -67,7 +67,7 @@ struct LearnView: View {
         .background(Color.white, in: Circle())
         .padding(.bottom, 40)
     }
-
+    
 }
 
 struct FactView: View {
@@ -82,13 +82,6 @@ struct FactView: View {
                 .cornerRadius(20)
                 .padding()
             VStack {
-                Text(myth.mythDesc)
-                    .bold()
-                    .foregroundColor(myth.mythTheme)
-                    .frame(maxWidth: 150)
-                    .multilineTextAlignment(.center)
-                    .padding()
-                
                 Button(action: {
                     withAnimation {
                         showFactView = false
@@ -100,10 +93,22 @@ struct FactView: View {
                         .padding(.top, 8)
                         .padding(.trailing, 8)
                 })
+                
                 .frame(maxWidth: .infinity, alignment: .trailing)
+                .padding(.trailing, 30)
+                .padding(.bottom, 30)
+                Text(myth.mythDesc)
+                    .bold()
+                    .foregroundColor(myth.mythTheme)
+                    .frame(maxWidth: UIScreen.main.bounds.width * 0.8)
+                    .multilineTextAlignment(.center)
+                    .padding(.bottom, UIScreen.main.bounds.height * 0.08)
+                
+                    .border(.red)
+                
             }
         }
-        .frame(width: UIScreen.main.bounds.width * 0.9)
+        .frame(width: UIScreen.main.bounds.width * 0.85)
         .background(BlurView(style: .systemUltraThinMaterial))
         .cornerRadius(20)
         .shadow(radius: 5)
@@ -115,13 +120,13 @@ struct BlurView: UIViewRepresentable {
     var style: UIBlurEffect.Style
     
     func makeUIView(context: UIViewRepresentableContext<BlurView>) -> UIVisualEffectView {
-            let blurEffect = UIBlurEffect(style: style)
-            let blurView = UIVisualEffectView(effect: blurEffect)
-            return blurView
-        }
-        
-        func updateUIView(_ uiView: UIVisualEffectView, context: UIViewRepresentableContext<BlurView>) {
-            uiView.effect = UIBlurEffect(style: style)
-        }
+        let blurEffect = UIBlurEffect(style: style)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        return blurView
     }
+    
+    func updateUIView(_ uiView: UIVisualEffectView, context: UIViewRepresentableContext<BlurView>) {
+        uiView.effect = UIBlurEffect(style: style)
+    }
+}
 
