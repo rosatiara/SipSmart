@@ -33,10 +33,10 @@ struct NutritionView: View {
                         .foregroundColor(Color("myBlue"))
                         .font(.system(size: UIScreen.main.bounds.width * 0.02))
 
-                }
+                }.padding(.top, 30)
                 Spacer()
             }.padding(.horizontal, 64)
-                .padding(.top, 64)
+                .padding(.top, UIScreen.main.bounds.width * 0.03)
         }
     }
 
