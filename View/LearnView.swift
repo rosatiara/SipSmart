@@ -1,9 +1,16 @@
+//
+//  LearnView.swift
+//  SipSmart
+//
+//  Created by Rosa Tiara Galuh on 14/04/23.
+//
+
 import SwiftUI
 import Foundation
 
 struct LearnView: View {
     @State private var showFactView = false
-    @State private var selectedMyth: Fact? = nil
+    @State private var selectedFact: Fact? = nil
     
     var body: some View {
         ZStack {
@@ -18,7 +25,7 @@ struct LearnView: View {
                         .font(.system(size: 38))
                         .multilineTextAlignment(.center)
                         .padding(.bottom, 20)
-                    Text("Get ready to satisfy your curiosity and learn interesting tidbits about this sweet substance. From its various forms and hidden sources to its impact on mood, oral health, and more, discover fascinating facts that will deepen your understanding of sugar. Let's dive into the sweet world of sugar and uncover some intriguing facts that might surprise you!")
+                    Text("From its various forms and hidden sources to its impact on mood, oral health, and more, discover fascinating facts that will deepen your understanding of sugar. Let's dive into the sweet world of sugar and uncover some intriguing facts that might surprise you!")
                         .multilineTextAlignment(.center)
                 }
                 .foregroundColor(Color("myBlue"))
@@ -27,11 +34,11 @@ struct LearnView: View {
                 ScrollView(.vertical, showsIndicators: false) {
                     let columns = Array(repeating: GridItem(.flexible()), count: 3)
                     LazyVGrid(columns: columns) {
-                        ForEach(myths) { myth in
-                            CardView(myth: myth)
+                        ForEach(facts) { fact in
+                            CardView(myth: fact)
                                 .onTapGesture {
                                     withAnimation {
-                                        selectedMyth = myth
+                                        selectedFact = fact
                                         showFactView = true
                                     }
                                 }
@@ -44,7 +51,7 @@ struct LearnView: View {
             .blur(radius: showFactView ? 10 : 0) // Apply blur when FactView is shown
             
             if showFactView {
-                FactView(myth: selectedMyth!, showFactView: $showFactView)
+                FactView(fact: selectedFact!, showFactView: $showFactView)
             }
         }
     }
@@ -73,7 +80,7 @@ struct LearnView: View {
 }
 
 struct FactView: View {
-    let myth: Fact
+    let fact: Fact
     @Binding var showFactView: Bool
     
     var body: some View {
@@ -96,10 +103,10 @@ struct FactView: View {
                 })
                 
                 .frame(maxWidth: .infinity, alignment: .trailing)
-                Text(myth.explanation)
+                Text(fact.explanation)
                     .font(.system(size: 20))
                     .bold()
-                    .foregroundColor(myth.factTheme)
+                    .foregroundColor(fact.factTheme)
                     .frame(maxWidth: UIScreen.main.bounds.width * 0.7)
                     .multilineTextAlignment(.center)
                     .padding(.bottom, UIScreen.main.bounds.height * 0.05)
@@ -112,7 +119,7 @@ struct FactView: View {
         .cornerRadius(20)
         .shadow(radius: 5)
         .padding(.top, UIScreen.main.bounds.height * 0.1)
-        .foregroundColor(myth.factTheme)
+        .foregroundColor(fact.factTheme)
     }
 }
 

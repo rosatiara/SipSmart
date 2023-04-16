@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct OpeningView: View {
+    @State private var goToBaseView = false
+
     var body: some View {
         ZStack {
             Image("OpeningViewBg")
@@ -24,6 +26,10 @@ struct OpeningView: View {
                     .frame(width: 500)
             }
         }
+        .onTapGesture{goToBaseView = true}
+        .fullScreenCover(isPresented: $goToBaseView) {
+                    BaseView()
+                }
     }
 }
 

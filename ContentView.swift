@@ -2,7 +2,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        BaseView()
+        VStack {
+            NavigationLink(
+                destination: BaseView(),
+                label: {
+                    EmptyView()
+                })
+            OpeningView()
+        }
     }
 }
 

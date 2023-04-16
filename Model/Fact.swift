@@ -1,5 +1,5 @@
 //
-//  Myth.swift
+//  Fact.swift
 //  SipSmart
 //
 //  Created by Rosa Tiara Galuh on 15/04/23.
@@ -16,7 +16,7 @@ struct Fact: Identifiable {
     var explanation: String
 }
 // pink, yellow, green, blue
-let myths = [
+let facts = [
     Fact(factTheme: Color("pinkTheme"), factImage: "cube1", factTitle: "Sugar has different names. 😲", explanation: "Sugar can go by many different names on ingredient lists, including sucrose, glucose, fructose, maltose, dextrose, and more. These different types of sugars may have varying effects on the body and can be found in various foods and beverages."),
     
     Fact(factTheme: Color("yellowTheme"), factImage: "cube2", factTitle: "Sugar can affect your mood", explanation: "Consuming sugar can lead to a temporary increase in serotonin, a neurotransmitter associated with mood regulation, which can create a temporary feeling of well-being or a \"sugar high.\" However, the subsequent crash in blood sugar levels can lead to feelings of fatigue, irritability, and mood swings."),
