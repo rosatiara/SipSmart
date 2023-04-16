@@ -65,7 +65,7 @@ struct LearnView: View {
         }
         
         //.frame(width: 220, height: 280)
-        .frame(width: UIScreen.main.bounds.width * 0.25, height: UIScreen.main.bounds.height * 0.2)
+        .frame(width: UIScreen.main.bounds.width * 0.28, height: UIScreen.main.bounds.height * 0.2)
         .background(Color.white, in: Circle())
         .padding(.bottom, 40)
     }
