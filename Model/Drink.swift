@@ -97,7 +97,7 @@ let drinks = [
           packageSize: "16 fl oz",
           totalSugar: "32g",
           teaspoon: "7.6",
-          alternatives: "Good health and good sense are two of life's greatest blessings.",
+          alternatives: "If you still prefer a matcha latte but want to reduce the sugar content, you can make your own matcha latte at home using unsweetened milk, such as almond milk, coconut milk, or oat milk, and only adding a small amount of sweetener or skipping it altogether for a healthier choice.",
           drinkBG: Color("bg2")),
     
     Drink(drinkImage: "americano",
@@ -105,7 +105,7 @@ let drinks = [
           packageSize: "250mL",
           totalSugar: "0g",
           teaspoon: "0",
-          alternatives: "It is health that is real wealth and not pieces of gold and silver.",
+          alternatives: "Americano is a great choice for a caffeinated beverage as it does not contain any added sugar. If you're looking for a beverage that provides a caffeine kick without the added sugar, Americano is an excellent option to consider.",
           drinkBG: Color("bg3")),
 ]
 
