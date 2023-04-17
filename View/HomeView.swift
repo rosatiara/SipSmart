@@ -38,6 +38,7 @@ struct HomeView: View {
                     LazyVGrid(columns: columns) {
                         ForEach(drinks) { drink in
                             CardView(drink: drink)
+                                .aspectRatio(1.0, contentMode: .fit)
                                 .onTapGesture {
                                     withAnimation {
                                         baseData.currentDrink = drink
@@ -45,8 +46,8 @@ struct HomeView: View {
                                     }
                                 }
                         }
-                    }
-                }
+                    }.frame(maxHeight: .infinity)
+                }        .padding(.bottom, 80)
             }.padding(.horizontal, UIScreen.main.bounds.width * 0.07)
                 .padding(.top, UIScreen.main.bounds.width * 0.07)
         }
@@ -77,7 +78,7 @@ struct HomeView: View {
         }
         
         //.frame(width: 220, height: 280)
-        .frame(width: UIScreen.main.bounds.width * 0.27, height: UIScreen.main.bounds.height * 0.26)
+        .frame(width: UIScreen.main.bounds.width * 0.27, height: UIScreen.main.bounds.height * 0.25)
         .background(Color.white, in: RoundedRectangle(cornerRadius: 25))
         .padding(.top, 15)
     }

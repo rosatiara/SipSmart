@@ -25,12 +25,13 @@ struct LearnView: View {
                         .font(.system(size: 38))
                         .multilineTextAlignment(.center)
                         .padding(.bottom, 20)
+                        .padding(.top, UIScreen.main.bounds.height * 0.01)
                     Text("From its various forms and hidden sources to its impact on mood, oral health, and more, discover fascinating facts that will deepen your understanding of sugar. These **cute sugar cubes** will help you to  dive into the sweet world of sugar and uncover some intriguing facts about it!")
                         .multilineTextAlignment(.center)
                 }
                 .foregroundColor(Color("myBlue"))
                 .padding(.top, UIScreen.main.bounds.height * 0.05)
-                .padding(.bottom, 40)
+                .padding(.bottom, 20)
                 ScrollView(.vertical, showsIndicators: false) {
                     let columns = Array(repeating: GridItem(.flexible()), count: 3)
                     LazyVGrid(columns: columns) {
@@ -54,7 +55,6 @@ struct LearnView: View {
                 FactView(fact: selectedFact!, showFactView: $showFactView)
             }
         }
-        .padding(.top, UIScreen.main.bounds.height * 0.1)
     }
     @ViewBuilder func CardView(myth: Fact) -> some View {
         ZStack() {

@@ -32,13 +32,12 @@ struct BaseView: View {
                
             }
             .overlay(
-                HStack(spacing: 0) {
+                HStack() {
                     TabButton(Tab: .Home)
                     TabButton(Tab: .Nutrition)
                     TabButton(Tab: .Calculator)
                     TabButton(Tab: .Learn)
                 }.background(Color("myBlue"))
-                    .offset(y: baseData.showDetail ? 0 : 0)
                 ,alignment: .bottom
             )
     }
