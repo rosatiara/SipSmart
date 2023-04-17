@@ -45,7 +45,7 @@ struct LearnView: View {
                                 }
                         }
                     }
-                }
+                }.padding(.bottom, 80)
                 Spacer()
             }
             .padding(.horizontal, UIScreen.main.bounds.width * 0.05)
