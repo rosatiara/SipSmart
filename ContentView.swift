@@ -1,3 +1,10 @@
+//
+//  ContentView.swift
+//  SipSmart
+//
+//  Created by Rosa Tiara Galuh on 10/04/23.
+//
+
 import SwiftUI
 
 struct ContentView: View {

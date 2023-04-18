@@ -20,7 +20,7 @@ struct LearnView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 VStack {
-                    Text("Sip into Sweetness: Discover Sugar's Secrets")
+                    Text("Sip into Sweetness")
                         .fontWeight(.heavy)
                         .font(.system(size: 38))
                         .multilineTextAlignment(.center)
